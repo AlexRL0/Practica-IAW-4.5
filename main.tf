@@ -91,7 +91,7 @@ resource "aws_instance" "backend" {
   security_groups = [aws_security_group.backend.name]
 
   tags = {
-    Name = var.instance_name
+    Name = "backend"
   }
 }
 
@@ -103,7 +103,7 @@ resource "aws_instance" "balanceador" {
   security_groups = [aws_security_group.balanceador.name]
 
   tags = {
-    Name = var.instance_name
+    Name = "balanceador"
   }
 }
 
@@ -115,7 +115,7 @@ resource "aws_instance" "nfs" {
   security_groups = [aws_security_group.nfs.name]
 
   tags = {
-    Name = var.instance_name
+    Name = "nfs"
   }
 }
 
