@@ -72,10 +72,10 @@ resource "aws_security_group_rule" "nfs_ingress" {
 
 # Creamos instancias EC2 para el frontend
 resource "aws_instance" "frontend" {
-  count         = 2
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
+  count           = 2
+  ami             = var.ami_id
+  instance_type   = var.instance_type
+  key_name        = var.key_name
   security_groups = [aws_security_group.frontend.name]
 
   tags = {
@@ -85,9 +85,9 @@ resource "aws_instance" "frontend" {
 
 # Creamos una instancia EC2 para el backend
 resource "aws_instance" "backend" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
+  ami             = var.ami_id
+  instance_type   = var.instance_type
+  key_name        = var.key_name
   security_groups = [aws_security_group.backend.name]
 
   tags = {
@@ -97,9 +97,9 @@ resource "aws_instance" "backend" {
 
 # Creamos una instancia EC2 para el balanceador de carga
 resource "aws_instance" "balanceador" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
+  ami             = var.ami_id
+  instance_type   = var.instance_type
+  key_name        = var.key_name
   security_groups = [aws_security_group.balanceador.name]
 
   tags = {
@@ -109,9 +109,9 @@ resource "aws_instance" "balanceador" {
 
 # Creamos una instancia EC2 para el NFS
 resource "aws_instance" "nfs" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
+  ami             = var.ami_id
+  instance_type   = var.instance_type
+  key_name        = var.key_name
   security_groups = [aws_security_group.nfs.name]
 
   tags = {

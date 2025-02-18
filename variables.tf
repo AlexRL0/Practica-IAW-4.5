@@ -49,19 +49,23 @@ variable "instance_name" {
 variable "SECURITY_GROUP_FRONTEND" {
   description = "Nombre del grupo de seguridad para el frontend"
   type        = string
+  default     = "sg_frontend"
 }
 
 variable "SECURITY_GROUP_BACKEND" {
   description = "Nombre del grupo de seguridad para el backend"
   type        = string
+  default     = "sg_backend"
 }
 
 variable "SECURITY_GROUP_BALANCEADOR" {
   description = "Nombre del grupo de seguridad para el balanceador de carga"
   type        = string
+  default     = "sg_balanceador"
 }
 
 variable "SECURITY_GROUP_NFS" {
   description = "Nombre del grupo de seguridad para el servidor NFS"
   type        = string
+  default     = "sg_nfs"
 }
